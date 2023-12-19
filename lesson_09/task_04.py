@@ -15,3 +15,14 @@ html = """
      </tr>
 </table>
 """
+
+result = re.findall(r'<td>(.*?)</td>', html)
+print(result)
+
+result_2 = []
+for item in result:
+    res = re.findall(r'([2-9]|\d\d)([A-Z][A-Za-z]+)([A-Z][A-Za-z]+)', item)
+    print(res)
+    result_2.extend(list(map(lambda x: f"{x[1]} {x[2]}", res))) if res else ...
+
+print(result_2)
